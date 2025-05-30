@@ -55,32 +55,27 @@ To write a C Program to print 'WELCOME' using malloc() and free().
 
 ## PROGRAM
 ```
-#include<stdio.h>
-#include<stdlib.h>
-int main()
-{
-char *str = (char *)malloc(8 * size(char));
-if (str == NULL)
-{
-printf("Memory allocation failed!\n);
-return 1;
-}
-str[0] = 'w'
-str[1] = 'E';
-str[2] ='L'
-str[3] ='C'
-str[4[ ='O'
-str [5] ='M'
-str[6] ='E'
-str[7] ='\0';
-printf("%s\n",str);
-free(str);
-return 0;
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+
+int main() {
+    char *str;
+    str = (char*) malloc(8 * sizeof(char));
+
+    if (str == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+    strcpy(str,"WELCOME");
+    printf("%s\n", str);
+    return 0;
 }
 ```
 ## OUTPUT
 
-![438209832-f4c3ccc1-18ee-4cd4-afb6-91d8d4dfb242](https://github.com/user-attachments/assets/b9a70fa1-450c-4122-94c6-4b75ad75f6b3)
+![438200402-b3c49aa7-8486-48f4-9f0b-5379bcfcc9f0](https://github.com/user-attachments/assets/6c3bb68a-1c8b-4699-922d-1acf3ed62cea)
+
 
 
 ## RESULT
