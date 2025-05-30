@@ -222,47 +222,44 @@ Step 8: End the program.
 
 ## PROGRAM
 ```
-#include<studio.h>
-struct student
-{
-char name[10];
-int rollno;
-int subject[5];
-int total;
-float average;
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int marks[5];
+    float total;
+    float average;
 };
+
 int main() {
- struct student s[2];
-int i,j;
-for(i=0; i<2; i++) {
-printf("Enter details for student %d\n",i+1);
-printf("Enter roll number: ");
-scanf("%d", &s[i].rollno);
-printf(""Enter maarks for 5 subjects: ");
-for(j=0; j <5; j++){
-scanf("%d", &s[i].subject[j]);
-}
-s[i].total=0;
-for(j=0;j<5;j++){
-fs[i].total +=s[i].subject[j];
-}
-s[i].average=s[i].total/5.0;
-if(i==0)s[i].total=374;
-if((i==1) s[i].total=383;
-}
-for(i=0;i<2;i++) {
-printf("\nStudent %d:\n",i+1);
-printf("""""Total marks: %d\n", s[i].tatal);
-printf("Average marks: %.2f\n",s[i].average);
-}
-return 0;
+    struct Student student;
+    int sum = 0;
+
+    printf("Enter student's name: ");
+    scanf("%s", student.name);
+
+    printf("Enter marks for 5 subjects:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Subject %d: ", i + 1);
+        scanf("%d", &student.marks[i]);
+        sum += student.marks[i];
+    }
+
+    student.total = sum;
+    student.average = sum / 5.0;
+
+    printf("\nStudent Name: %s\n", student.name);
+    printf("Total Marks: %.2f\n", student.total);
+    printf("Average Marks: %.2f\n", student.average);
+
+    return 0;
 }
 ```
 
 ## OUTPUT
 
- 
-![438211171-1fea32fe-12d2-47f0-9386-abff6376ef44](https://github.com/user-attachments/assets/59cb9296-0b08-4576-8187-e0e80e74ff05)
+ ![Screenshot 2025-05-30 095253](https://github.com/user-attachments/assets/5c2b73d2-29b6-4f96-9f1d-e6826668b327)
+
 
 
 ## RESULT
