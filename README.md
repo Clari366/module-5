@@ -11,21 +11,29 @@ To write a C Program to find area of rectangle using pointer.
 
 ## PROGRAM
 ```
-#include<stdio.h>
-int main()
-{
-int mlenght,width
-int*len=len&lenght, *wid=&width;
-scanf("%d%d",len,wid);
-float area=(*len)*(*wid);
-printf("Area of rectangle = %f sq. units ", area);
-return 0;
+#include <stdio.h>
+
+int main() {
+    float length, width, area;
+    float *ptrLength = &length, *ptrWidth = &width, *ptrArea = &area;
+
+    printf("Enter length of rectangle: ");
+    scanf("%f", ptrLength);
+
+    printf("Enter width of rectangle: ");
+    scanf("%f", ptrWidth);
+
+    *ptrArea = (*ptrLength) * (*ptrWidth);
+
+    printf("Area of rectangle: %.2f\n", *ptrArea);
+
+    return 0;
 }
 ```
 ## OUTPUT
 		       	
-![438209239-9cb2e583-562c-4871-8838-70aec142acee](https://github.com/user-attachments/assets/b71e26d1-c6fe-4afb-b5e9-d5eb2bfafc67)
 
+![438200097-d57acebc-a509-4b8d-9aed-88898bf5b657](https://github.com/user-attachments/assets/e57c1f9d-2279-4723-a6cf-c6ca2f6cdf5f)
 
 ## RESULT
 Thus the program to find area of rectangle using pointer has been executed successfully
@@ -146,39 +154,59 @@ To write a C Program to read and store the data of 3 employees and calculate the
 
 ## PROGRAM
 ```
-#include<stdio.h>
-struct employee
-{
-int eno;
-char dept[20];
-float basicpay;
-float da;
-float hra;
-float grossSalary;
+#include <stdio.h>
+
+struct Employee {
+    char name[50];
+    float basicSalary;
+    float hra;
+    float da;
+    float grossSalary;
 };
-int main()
-{
-struct employee emp[3]
-for (int i=0;i<3;i++)
-{
-scanf("%d %s %f", &emp[i].eno,emp[i].dept,&emp[i].basipay);
-emp[i].da=emp[i].basicpay*0.10;
-emp[i].hra=emp[i].basicpay*0.30;
-emp[i].grossSalary=emp[i].basicpay+emp[i].hra;
-}
-printf("Details of the Employee:\n);
-for(int i=0;,i<3;i++)
-{
-printf("%d %s %.0f %.0f %.2f\n", emp[i].eno,emp[i].dept,emp[i].basicpay,em
-}
+
+int main() {
+    struct Employee emp[3];
+
+    for (int i = 0; i < 3; i++) {
+        printf("Enter details for Employee %d:\n", i + 1);
+        
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+        
+        printf("Enter Basic Salary: ");
+        scanf("%f", &emp[i].basicSalary);
+        
+        printf("Enter HRA: ");
+        scanf("%f", &emp[i].hra);
+        
+        printf("Enter DA: ");
+        scanf("%f", &emp[i].da);
+
+        emp[i].grossSalary = emp[i].basicSalary + emp[i].hra + emp[i].da;
+        printf("\n");
+    }
+
+    printf("Employee Details and Gross Salary:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Employee %d\n", i + 1);
+        printf("Name: %s\n", emp[i].name);
+        printf("Basic Salary: %.2f\n", emp[i].basicSalary);
+        printf("HRA: %.2f\n", emp[i].hra);
+        printf("DA: %.2f\n", emp[i].da);
+        printf("Gross Salary: %.2f\n", emp[i].grossSalary);
+        printf("\n");
+    }
+
+    return 0;
 }
 ```
 
  ## OUTPUT
  
-![438210760-457d0649-b2d2-4eca-9cde-64a0fcc3bf3c](https://github.com/user-attachments/assets/8d99c40b-2e43-4d06-9ce0-468a108456c5)
 
- 
+
+ ![438200952-68fad761-c57b-4daf-b2bc-ea83e5a9389b](https://github.com/user-attachments/assets/c3bafe73-b787-4f35-982a-85bdc1764d9e)
+
 
 ## RESULT
 
@@ -258,7 +286,7 @@ int main() {
 
 ## OUTPUT
 
- ![Screenshot 2025-05-30 095253](https://github.com/user-attachments/assets/5c2b73d2-29b6-4f96-9f1d-e6826668b327)
+![Screenshot 2025-05-30 113214](https://github.com/user-attachments/assets/ad07340c-e374-4dab-98f1-b01ff8070e67)
 
 
 
